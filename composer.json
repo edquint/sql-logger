@@ -1,0 +1,24 @@
+{
+    "name": "edquint/sql-logger",
+    "description": "Library for generating SQL logs from ORMs and raw queries",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "jdorn/sql-formatter": "^1.2"
+    },
+    "suggest": {
+        "doctrine/doctrine1": "Required to enable SQL logging with Doctrine 1.",
+        "doctrine/orm": "Required to enable SQL logging with Doctrine 2.",
+        "illuminate/database": "Required to enable SQL logging with Eloquent ORM."
+    },
+    "authors": [
+        {
+            "name": "Edson Quintilhano"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SqlLogger\\": "src"
+        }
+    }
+}
