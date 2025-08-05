@@ -15,9 +15,11 @@ use SqlLogger\Interfaces\FormatterInterface;
 class Doctrine1Formatter implements FormatterInterface
 {
     /**
-     * @param \Doctrine_Query $builder
+     * @param \Doctrine_Query $builder ORM builder used to build the query.
+     *
+     * @return string The formatted SQL string.
      */
-    public static function formatter(object $builder)
+    public static function formatter($builder)
     {
         $query = $builder->getSqlQuery();
         $valuesFilter = $builder->getParams()['where'];

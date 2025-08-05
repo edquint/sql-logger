@@ -1,5 +1,11 @@
 📄 Leia esta documentação em [Português 🇧🇷](README.pt.md)
 
+[![Maintainer](https://img.shields.io/badge/maintainer-@edquint-blue.svg?style=flat-square)](https://github.com/edquint)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/edquint/sql-logger.svg?style=flat-square)](https://packagist.org/packages/edquint/sql-logger)
+[![Latest Version](https://img.shields.io/github/release/edquint/sql-logger.svg?style=flat-square)](https://github.com/edquint/sql-logger/releases/)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/edquint/sql-logger/blob/main/LICENSE)
+[![Total Downloads](https://img.shields.io/packagist/dt/edquint/sql-logger.svg?style=flat-square)](https://packagist.org/packages/edquint/sql-logger)
+
 # PHP SQL Logger
 
 A simple library to generate SQL query logs and write them to log files.  

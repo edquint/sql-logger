@@ -12,5 +12,8 @@ namespace SqlLogger\Interfaces;
 
 interface LoggerInterface
 {
-    public function writeLog(string $query);
+    /**
+     * @param string $query The formatted SQL string.
+     */
+    public function writeLog($query);
 }

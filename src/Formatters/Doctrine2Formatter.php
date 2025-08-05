@@ -17,9 +17,11 @@ use SqlLogger\Interfaces\FormatterInterface;
 class Doctrine2Formatter implements FormatterInterface
 {
     /**
-     * @param QueryBuilder|Query $builder
+     * @param QueryBuilder|Query $builder ORM builder used to build the query.
+     *
+     * @return string The formatted SQL string.
      */
-    public static function formatter(object $builder)
+    public static function formatter($builder)
     {
         if ($builder instanceof QueryBuilder) {
             $query = $builder->getQuery();
