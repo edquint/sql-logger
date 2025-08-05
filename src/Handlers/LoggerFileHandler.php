@@ -15,7 +15,10 @@ use SqlLogger\Settings\LoggerConfig;
 
 class LoggerFileHandler implements LoggerInterface
 {
-    public function writeLog(string $query)
+    /**
+     * @param string $query The formatted SQL string.
+     */
+    public function writeLog($query)
     {
         $path = LoggerConfig::getLogPath();
 

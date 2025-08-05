@@ -13,7 +13,9 @@ namespace SqlLogger\Interfaces;
 interface FormatterInterface
 {
     /**
-     * @return string
+     * @param object $builder ORM builder used to build the query.
+     *
+     * @return string The formatted SQL string.
      */
-    public static function formatter(object $builder);
+    public static function formatter($builder);
 }

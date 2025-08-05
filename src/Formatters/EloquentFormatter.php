@@ -17,10 +17,11 @@ use SqlLogger\Interfaces\FormatterInterface;
 class EloquentFormatter implements FormatterInterface
 {
     /**
-     * @param EloquentBuilder|QueryBuilder $builder
-     * @return string Query
+     * @param EloquentBuilder|QueryBuilder $builder ORM builder used to build the query.
+     *
+     * @return string The formatted SQL string.
      */
-    public static function formatter(object $builder)
+    public static function formatter($builder)
     {
         $sql = $builder->toSql();
         $bindings = $builder->getBindings();

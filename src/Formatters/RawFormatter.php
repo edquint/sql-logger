@@ -12,19 +12,27 @@ namespace SqlLogger\Formatters;
 
 class RawFormatter
 {
-    public static function formatter(string $rawQuery = '', array $queryParams = [])
+    /**
+     * @param string $rawQuery Raw Sql Query.
+     * @param array $queryParams Parameters for the SQL query.
+     *
+     * @return string The formatted SQL string.
+     */
+    public static function formatter($rawQuery = '', $queryParams = [])
     {
-        $isPositional = array_keys($queryParams) === range(0, count($queryParams) - 1);
+        if (!empty($queryParams)) {
+            $isPositional = array_keys($queryParams) === range(0, count($queryParams) - 1);
 
-        if ($isPositional) {
-            foreach ($queryParams as $param) {
-                $replacement = self::formatValue($param);
-                $rawQuery = preg_replace('/\?/', $replacement, $rawQuery, 1);
-            }
-        } else {
-            foreach (array_reverse($queryParams) as $key => $value) {
-                $replacement = self::formatValue($value);
-                $rawQuery = preg_replace("/(?<!:):$key\b/", $replacement, $rawQuery);
+            if ($isPositional) {
+                foreach ($queryParams as $param) {
+                    $replacement = self::formatValue($param);
+                    $rawQuery = preg_replace('/\?/', $replacement, $rawQuery, 1);
+                }
+            } else {
+                foreach (array_reverse($queryParams) as $key => $value) {
+                    $replacement = self::formatValue($value);
+                    $rawQuery = preg_replace("/(?<!:):$key\b/", $replacement, $rawQuery);
+                }
             }
         }
 

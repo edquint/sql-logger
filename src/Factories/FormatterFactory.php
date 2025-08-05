@@ -18,9 +18,11 @@ use SqlLogger\Interfaces\FormatterInterface;
 class FormatterFactory
 {
     /**
+     * @param object $builder ORM builder used to build the query.
+     *
      * @return FormatterInterface|null
      */
-    public static function getFormatter(object $builder)
+    public static function getFormatter($builder)
     {
         if (class_exists('Doctrine_Core') && $builder instanceof \Doctrine_Query) {
             return Doctrine1Formatter::class;

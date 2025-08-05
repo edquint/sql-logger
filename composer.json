@@ -4,6 +4,7 @@
     "type": "library",
     "license": "MIT",
     "require": {
+        "php": ">=5.0",
         "jdorn/sql-formatter": "^1.2"
     },
     "suggest": {
