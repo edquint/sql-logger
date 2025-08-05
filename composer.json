@@ -4,7 +4,7 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": ">=5.0",
+        "php": ">=5.2.4",
         "jdorn/sql-formatter": "^1.2"
     },
     "suggest": {
@@ -20,6 +20,9 @@
     "autoload": {
         "psr-4": {
             "SqlLogger\\": "src"
-        }
+        },
+        "files": [
+            "src/global_helpers.php"
+        ]
     }
 }

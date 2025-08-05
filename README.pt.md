@@ -62,6 +62,9 @@ use SqlLogger\LogSql;
 
 // Exemplo com uma query de ORM (Doctrine, Eloquent, etc.)
 LogSql::orm($query);
+
+// Também é possível usar a função global auxiliar
+sql_logger($query);
 ```
 
 Isso irá converter a query para uma string formatada e salvar no arquivo configurado.
@@ -79,6 +82,9 @@ $params = ['id' => 10];
 $sql = "SELECT * FROM users WHERE id = :id";
 
 LogSql::raw($sql, $params);
+
+// Também é possível usar a função global auxiliar
+sql_logger($sql, $params);
 ```
 
 ## 🔍 Saída do Log
